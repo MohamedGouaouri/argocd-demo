@@ -9,10 +9,10 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    directory:
-      exclude: 'apps/dev/*'
-      jsonnet: {}
-      recurse: true
+    # directory:
+    #   exclude: 'apps/dev/*'
+    #   jsonnet: {}
+    #   recurse: true
     path: apps
     repoURL: https://github.com/MohamedGouaouri/argocd-demo.git
     targetRevision: HEAD
