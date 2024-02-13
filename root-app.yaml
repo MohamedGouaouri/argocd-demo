@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: namla-apps
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      exclude: '{*/dev/*.yaml,*.json}'
+      jsonnet: {}
+      recurse: true
+    path: apps
+    repoURL: https://github.com/MohamedGouaouri/argocd-demo.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNameSpace=true
