@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     directory:
-      exclude: 'apps/dev/*.yaml'
+      exclude: 'apps/dev/*'
       jsonnet: {}
       recurse: true
     path: apps
